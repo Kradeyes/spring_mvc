@@ -7,6 +7,10 @@ Your name: ${employee.name}
 <br>
 Your surname: ${employee.surname}
 <br>
+Your email: ${employee.email}
+<br>
+Your phoneNumber: ${employee.phoneNumber}
+<br>
 Your salary : ${employee.salary}
 <br>
 Your department: ${employee.department}

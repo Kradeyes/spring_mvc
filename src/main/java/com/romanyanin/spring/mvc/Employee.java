@@ -1,16 +1,34 @@
 package com.romanyanin.spring.mvc;
 
+import com.romanyanin.spring.mvc.validation.CheckEmail;
+
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+
+    @Size(min = 4, message = "Name must be 4 symbols or more")
+    @NotBlank(message = "Dont use only spaces")
     private String name;
+
+    @NotBlank(message = "Surname is required field")
     private String surname;
+
+    @Min(value = 500, message = "Must be greater than 499")
+    @Max(value = 1000, message = "Must be less than 1001")
     private int salary;
+
     private String department;
     private String carBrand;
     private Map<String,String> carBrands;
     private Map<String,String> departments;
+
+    @Pattern(regexp = "7-\\d{3}-\\d{7}", message = "please use pattern 7-XXX-XXXXXXX")
+    private String phoneNumber;
+
+    @CheckEmail
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -76,6 +94,22 @@ public class Employee {
 
     public void setCarBrands(Map<String, String> carBrands) {
         this.carBrands = carBrands;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
