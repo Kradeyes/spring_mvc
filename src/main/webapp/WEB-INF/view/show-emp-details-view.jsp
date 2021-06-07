@@ -3,8 +3,10 @@
 <body>
 <h2>Dear Employee, your are Welcome</h2>
 <br>
-
-Your name: ${nameAttribute}
-
+Your name: ${employee.name}
+<br>
+Your surname: ${employee.surname}
+<br>
+Your salary : ${employee.salary}
 </body>
 </html>
